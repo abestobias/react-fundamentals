@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        p.textcenter {
+            text-align: center;
+            background-color: aquamarine;
+        }
+
+        p.textdir {
+            text-align: right;
+            background-color: burlywood;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="root"></div>
+
+    <script src="https://unpkg.com/react@17.0.0/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.0/umd/react-dom.development.js"></script>
+    <script src="https://unpkg.com/@babel/standalone@7.12.4/babel.js"></script>
+
+    <script type="text/babel">
+
+        function Container(props) {
+            return <div className="container"{...props}></div>
+        }
+
+        function ParagCenter(props) {
+            return <p className="textCenter" {...props}></p>
+        }
+
+        function ParagDir(props) {
+            return <p className="textDir" {...props}></p>
+        }
+
+        function Conteudo(props) { 
+        return (
+            <Container id="main">
+                <ParagCenter> Componente personalizado</ParagCenter>
+                <ParagDir> Este paragrafo deve estar alinhado na direita.</ParagDir>
+                <ParagDir> Este paragrafo tambem deve estar alinhado a direita.</ParagDir>
+            </Container>
+        )
+        }
+
+        ReactDOM.render(<Conteudo />, document.getElementById('root'))
+    </script>
+
+</body>
+
+</html>
