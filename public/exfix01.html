@@ -39,14 +39,14 @@
             return <p className="textDir" {...props}></p>
         }
 
-        function Conteudo(props) { 
-        return (
-            <Container id="main">
-                <ParagCenter> Componente personalizado</ParagCenter>
-                <ParagDir> Este paragrafo deve estar alinhado na direita.</ParagDir>
-                <ParagDir> Este paragrafo tambem deve estar alinhado a direita.</ParagDir>
-            </Container>
-        )
+        function Conteudo(props) {
+            return (
+                <Container id="main">
+                    <ParagCenter> Componente personalizado</ParagCenter>
+                    <ParagDir> Este paragrafo deve estar alinhado na direita.</ParagDir>
+                    <ParagDir> Este paragrafo tambem deve estar alinhado a direita.</ParagDir>
+                </Container>
+            )
         }
 
         ReactDOM.render(<Conteudo />, document.getElementById('root'))

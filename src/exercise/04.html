@@ -29,12 +29,23 @@
                 </div>
             )
         }
+        function soma({ num1, num2 }) {
+            return (
+                <>
+                    <p> O Resultado da soma é </p>
+                    <div>{num1 + num2}</div>
+                </>
+            )
+
+        }
 
         // Usando o componente personalizado representando pela função Message 
         element = (
-            <div className ="container">
-            <Message subject="mamâe" greeting="Alô"/>
-            <Message greeting="Bem vindo" subject = "HUMANO"/>
+            <div className="container">
+                <soma num1={100} num2={200} />
+                <Message subject="mamâe" greeting="Alô" />
+                <Message greeting="Bem vindo" subject="HUMANO" />
+                {message({ subject: 'Abes', greeting: 'Olá' })}
             </div>
         )
 
