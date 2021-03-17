@@ -23,18 +23,35 @@ function UsernameForm({ onSubmitUsername }) {
 
     const usernameEl = React.userRef()
 
+    const [msg, setMsg] = React.userState('')
+    const [username, setUsername] = React.useState('')
+    
+    
+    
+    
     function handleSubmit(event) {
         event.preventDefault()
         const username = usernameEl.current.value
         onSubmitUsername(username)
     }
 
+    function handleChange(event){
+        const val = event.target.value
+
+
+        setUsername(val.toLowerCase())
+        //const isValid = (val === val.toLowerCase())
+        //etMsg(isValid ? '' : ' O valor informado deve estar em minusculas')
+    }
+    
+    
     return (
         <form onSubmit={handleSubmit}>
             <div>
                 <label>Username:</label>
-                <input ref={usernameEl} id="username" type="text" />
+                <input ref={usernameEl} id="username" type="text" onChange={handleChange} value ={username}/>
             </div>
+            <div style={{ color: 'red'}}>{msg}</div>
             <button type="submit">Submit</button>
         </form>
     )
